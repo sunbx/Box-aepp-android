@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff">
+
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:src="@drawable/jz_back_normal"
+                android:tint="#000000" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Box æpp"
+            android:textColor="#FF4D90"
+            android:textSize="18dp">
+
+        </TextView>
+
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_logout"></ImageView>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="tab1"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auction"
+                android:textColor="#FF000000"
+                android:textSize="18dp" />
+
+            <View
+                android:id="@+id/view_tab1"
+                android:layout_width="16dp"
+                android:layout_height="4dp"
+                android:background="#FF000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="tab2"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="#FF666666"
+                android:textSize="15dp" />
+
+            <View
+                android:id="@+id/view_tab2"
+                android:layout_width="16dp"
+                android:layout_height="4dp"
+                android:background="#FF000000"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="tab3"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_tab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overdue"
+                android:textColor="#FF666666"
+                android:textSize="15dp" />
+
+            <View
+                android:id="@+id/view_tab3"
+                android:layout_width="16dp"
+                android:layout_height="4dp"
+                android:background="#FF000000"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="tab4"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_tab4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Names"
+                android:textColor="#FF666666"
+                android:textSize="15dp" />
+
+            <View
+                android:id="@+id/view_tab4"
+                android:layout_width="16dp"
+                android:layout_height="4dp"
+                android:background="#FF000000"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#ffffff"></androidx.viewpager.widget.ViewPager>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@null"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:onClick="nameRegister"
+            android:insetBottom="32dp"
+            android:src="@drawable/ic_add"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            app:cornerRadius="1000dp" />
+
+    </RelativeLayout>
+</LinearLayout>

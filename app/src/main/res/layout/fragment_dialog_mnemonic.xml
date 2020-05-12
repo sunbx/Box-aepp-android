@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_eeeeee_5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <me.codeboy.android.aligntextview.CBAlignTextView
+            android:id="@+id/tv_mnemonic"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_while_5"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#F7296E"
+            android:textIsSelectable="true"
+            android:textSize="30dp" />
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_copy"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#F7296E"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:insetBottom="0dp"
+            android:text="Copy to the clipboard"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            app:cornerRadius="1000dp"
+            app:rippleColor="#ffffff" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_remember"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#6948a1"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="I remember the"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            app:cornerRadius="1000dp"
+            app:rippleColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Please remember your mnemonic for next time"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+</RelativeLayout>
