@@ -99,6 +99,7 @@ class AeasyLoginActivity : EasyBaseActivity() {
 
                 override fun onFailure(call: Call<AeasyLoginModel?> , t: Throwable) {
                     dismissProgress()
+                    EasyToast.show(mContext ,t.message)
                 }
             })
 

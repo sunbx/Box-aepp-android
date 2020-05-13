@@ -31,7 +31,49 @@ import java.util.HashMap
  * @class describe
  */
 class NamesDetailActivity : EasyBaseActivity() {
+
+
+    override fun initView() {
+
+    }
+
     override fun initData() {
+        netInfo()
+    }
+
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_names_detail
+    }
+
+
+    fun back(view: View) {
+        finish()
+    }
+
+
+    fun transfer(view: View) {
+        MaterialDialog(mContext).show {
+            cancelable(false)
+            cancelOnTouchOutside(false)
+            title(text = "Hint")
+            message(text = "In development, look forward to it")
+            positiveButton(text = "ok") { dialog ->
+            }
+            negativeButton(text = "cancel") { dialog ->
+            }
+        }
+    }
+
+    fun premium(view: View) {
+        RegisterNamesActivity.invoke(this , intent.getStringExtra("NAME").toString().split(".")[0])
+    }
+
+    fun renewal(view: View) {
+        netRenewal()
+    }
+
+    private fun netInfo() {
         loadingview.setLoadingType(EasyLoadingView.EASY_LOADING_LOAD)
         val name = intent.getStringExtra("NAME")
         val params = HashMap<String , Any>()
@@ -55,17 +97,14 @@ class NamesDetailActivity : EasyBaseActivity() {
                         tv_expires_height.setText(response.body()!!.data.over_height.toString())
                         tv_price.setText(response.body()!!.data.current_price + " AE")
                         tv_owner.setText(response.body()!!.data.owner)
-
                         if (response.body()!!.data.end_height > response.body()!!.data.current_height) {
                             mb_premium.visibility = View.VISIBLE
-                        }else{
+                        } else {
                             if (BoxApp.instance().getAddress() == response.body()!!.data.owner) {
                                 mb_renewal.visibility = View.VISIBLE
                                 mb_transfer.visibility = View.VISIBLE
                             }
                         }
-
-
                     } else {
                         EasyToast.show(BoxApp.instance() , response.body()!!.msg)
                     }
@@ -76,45 +115,7 @@ class NamesDetailActivity : EasyBaseActivity() {
         })
     }
 
-    override fun onResume() {
-        super.onResume()
-
-
-    }
-
-    override fun initView() {
-    }
-
-    override fun getLayoutId(): Int {
-        return R.layout.activity_names_detail
-    }
-
-
-    companion object {
-        operator fun invoke(context: Context , name: String) {
-            val intent = Intent(context , NamesDetailActivity::class.java)
-            intent.putExtra("NAME" , name)
-            context.startActivity(intent)
-        }
-    }
-
-    fun transfer(view: View) {
-        MaterialDialog(mContext).show {
-            cancelable(false)
-            cancelOnTouchOutside(false)
-            title(text = "Hint")
-            message(text ="In development, look forward to it")
-            positiveButton(text = "ok") { dialog ->
-            }
-            negativeButton(text = "cancel") { dialog ->
-            }
-        }
-    }
-    fun premium(view: View) {
-        RegisterNamesActivity.invoke(this,intent.getStringExtra("NAME").toString().split(".")[0])
-    }
-    fun renewal(view: View) {
-
+    private fun netRenewal() {
         showProgress()
         val params = HashMap<String , Any>()
         params["name"] = intent.getStringExtra("NAME").toString()
@@ -154,7 +155,6 @@ class NamesDetailActivity : EasyBaseActivity() {
                             negativeButton(text = "cancel") { dialog ->
                             }
                         }
-//                        EasyToast.show(BoxApp.instance() , response.body()!!.msg)
                     }
                 } else {
                     EasyToast.show(BoxApp.instance() , response.message())
@@ -162,8 +162,15 @@ class NamesDetailActivity : EasyBaseActivity() {
             }
         })
     }
-    fun back(view: View) {
-        finish()
+
+
+    companion object {
+        operator fun invoke(context: Context , name: String) {
+            val intent = Intent(context , NamesDetailActivity::class.java)
+            intent.putExtra("NAME" , name)
+            context.startActivity(intent)
+        }
     }
+
 
 }
