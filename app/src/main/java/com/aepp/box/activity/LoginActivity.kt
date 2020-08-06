@@ -27,7 +27,7 @@ class LoginActivity : EasyBaseActivity() {
     override fun onResume() {
         super.onResume()
         if (BoxApp.instance().isLogin()){
-            AensActivity.invoke(LoginActivity@this)
+            HomeActivity.invoke(LoginActivity@this)
             finish()
         }
     }

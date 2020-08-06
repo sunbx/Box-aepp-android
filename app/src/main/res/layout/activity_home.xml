@@ -12,20 +12,52 @@
         android:layout_weight="1" />
 
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></ImageView>
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tab1"
+                android:tint="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tab2"
+                android:tint="#000000" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tab3"
+                android:tint="#000000" />
 
         </LinearLayout>
 

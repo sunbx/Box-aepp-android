@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:text="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -22,13 +23,15 @@
         android:orientation="vertical">
 
 
-        <me.codeboy.android.aligntextview.CBAlignTextView
+        <TextView
             android:id="@+id/tv_mnemonic"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_while_5"
             android:gravity="center"
+            android:text="memory pool equip lesson limb naive endorse advice lift result track gravity"
+
             android:padding="10dp"
             android:textColor="#F7296E"
             android:textIsSelectable="true"
